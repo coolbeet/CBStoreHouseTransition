@@ -8,6 +8,10 @@ A custom transition inspired by [Storehouse](https://www.storehouse.co/) iOS app
 
 ![screenshot] (https://s3.amazonaws.com/suyu.test/CBStoreHouseTransition.gif)
 
+Video
+---
+[![CBStoreHouseTransition](http://img.youtube.com/vi/hSmsJNzopJ0/0.jpg)](http://www.youtube.com/watch?v=hSmsJNzopJ0)
+
 Features
 ---
 
