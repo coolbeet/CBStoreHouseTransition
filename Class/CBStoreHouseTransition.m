@@ -142,8 +142,10 @@
             break;
         }
         default:
-            if ([recognizer velocityInView:self.parentViewController.view].x >= 0)
+            if ([recognizer velocityInView:self.parentViewController.view].x >= 0) {
                 [self finishInteractiveTransition];
+                [self.parentViewController.view removeGestureRecognizer:recognizer];
+            }
             else
                 [self cancelInteractiveTransition];
             break;

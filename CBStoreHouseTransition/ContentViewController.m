@@ -41,8 +41,6 @@ static CGFloat const navBarHeight = 64;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.animator = [[CBStoreHouseTransitionAnimator alloc] init];
-    self.interactiveTransition = [[CBStoreHouseTransitionInteractiveTransition alloc] init];
-    [self.interactiveTransition attachToViewController:self];
     
     UIScrollView *mainScrollView = [[UIScrollView alloc] init];
     mainScrollView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -77,6 +75,8 @@ static CGFloat const navBarHeight = 64;
 {
     [super viewDidAppear:animated];
     self.navigationController.delegate = self;
+    self.interactiveTransition = [[CBStoreHouseTransitionInteractiveTransition alloc] init];
+    [self.interactiveTransition attachToViewController:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
