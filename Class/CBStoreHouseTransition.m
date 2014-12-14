@@ -62,10 +62,20 @@
             }];
 
         } completion:^(BOOL finished) {
+            //
+            // iOS 8 Bug:
+            // UIKit removes destination.view from hierarchy and leaves the blank screen.
+            // Manually adding UILayoutContainer to window hierarchy magically solves the problem.
+            //
+            if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
+                [toViewController.view.window addSubview:toViewController.view];
+            }
+
             if ([transitionContext transitionWasCancelled])
                 [transitionContext completeTransition:NO];
             else
                 [transitionContext completeTransition:YES];
+            
         }];
     }
     else {
@@ -92,6 +102,15 @@
             }];
             
         } completion:^(BOOL finished) {
+            //
+            // iOS 8 Bug:
+            // UIKit removes destination.view from hierarchy and leaves the blank screen.
+            // Manually adding UILayoutContainer to window hierarchy magically solves the problem.
+            //
+            if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
+                [toViewController.view.window addSubview:toViewController.view];
+            }
+
             if ([transitionContext transitionWasCancelled])
                 [transitionContext completeTransition:NO];
             else
